@@ -1,4 +1,4 @@
-# 第一课：计数器
+# 项目1：计数器
 
 ![1.png](./images/1.png)
 
@@ -220,4 +220,90 @@ export default {
   font-size: 18px;
 }
 </style>
+```
+
+完整参考代码：
+
+```
+<script>
+
+import { 
+  Button ,
+  Header,
+} from 'mint-ui';
+
+function render(h){
+    return(
+      <div id="app">
+        <Header
+          id="header"
+          fixed={true}
+          title={'计数器'}
+        />
+        <p id="content">
+          {`点击次数为：${this.count}`}
+        </p>
+        <Button 
+          class="btn"
+          size="large"
+          type="primary"
+          onClick={this.add}
+        >增加</Button>
+        <Button 
+          class="btn"
+          size="large"
+          type="primary"
+          onClick={this.dec}
+        >减少</Button>
+        <Button 
+          class="btn"
+          size="large"
+          type="primary"
+          onClick={this.zero}
+        >归零</Button>
+      </div>
+    )
+}
+
+const methods = {
+  add:function(){
+    this.count++;
+  },
+  dec:function(){
+    this.count--;
+  },
+  zero:function(){
+    this.count = 0;
+  }
+}
+
+const data = ()=>{
+  return{
+    count:0,
+  }
+}
+
+export default {
+  name: 'app',
+  render,
+  methods,
+  data
+}
+</script>
+
+<style>
+
+#content{
+  margin-top: 60px;
+}
+
+.btn{
+  margin-top: 10px;
+}
+
+#header{
+  font-size: 18px;
+}
+</style>
+
 ```
