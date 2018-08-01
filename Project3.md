@@ -590,7 +590,7 @@ export default {
 </script>
 ```
 
-2，构建完Screen对象路由表
+2，构建Screen对象路由表
 
 此WebApp中，除去TabBarScreen中包含的3个Screen外，还有6个Screen对象，需要通过路由表将其访问路径做规划：
 
